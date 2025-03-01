@@ -1,5 +1,8 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
 const client = new Client({
     intents: [
@@ -51,3 +54,6 @@ client.on('messageCreate', async (message) => {
 });
 
 client.login(process.env.TOKEN);
+app.listen(port, () => {
+    console.log(`ping bot listening on port ${port}`)
+})
