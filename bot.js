@@ -54,6 +54,9 @@ client.on('messageCreate', async (message) => {
 });
 
 client.login(process.env.TOKEN);
+app.get('/', (req, res) => {
+    res.json({msg: 'got response'})
+})
 app.listen(port, () => {
     console.log(`ping bot listening on port ${port}`)
 })
